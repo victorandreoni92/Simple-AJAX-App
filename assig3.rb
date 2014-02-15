@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do 
-  "Hello, worldaaz"
+  "Hello, worldaaz heroku"
 end
