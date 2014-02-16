@@ -33,16 +33,20 @@
 		</div>
 		
 		<div id="content"  style="min-height: 600px;">
-			<p style="text-align: center" id="game_instructions"> </p>
-		    <div class="input_holder">
-		    	<input type="text" id="secret_value" tabindex="1" onkeypress="handle_keypress(event)"/> 
-		        <input type="button" id="guess_button" tabindex="2" onclick="validate_answer()" value="Guess!" />
-		    </div>
-		    <p style="text-align: center" id="message"> </p>
-		    <div class="input_holder">
-		        <!-- Set play again buttons to hidden until the player wins -->
-		        <input type="button" id="yes_button" value="Yes" onclick="repeat(true)" style="visibility: hidden" /> <input type="button" id="no_button" value="No" onclick="repeat(false)" style="visibility: hidden" />
-		    </div>
+		  <form id="game_form">
+		      <p style="text-align: center" id="game_instructions"> </p>
+		      <div class="input_holder">
+		          <!-- onKeyDown returns false if enter is pressed to prevent the form from being submitted since submission
+		              is being handled by validate_answer() -->
+		          <input type="text" id="secret_value" tabindex="1" onkeydown="processKeyDown(); return event.keyCode != 13;"/> 
+		          <input type="button" id="guess_button" tabindex="2" onclick="validate_answer()" value="Guess!" />
+		      </div>
+		      <p style="text-align: center" id="message"> </p>
+		      <div class="input_holder">
+		          <!-- Set play again buttons to hidden until the player wins -->
+		          <input type="button" id="yes_button" value="Yes" onclick="repeat(true)" style="visibility: hidden" /> <input type="button" id="no_button" value="No" onclick="repeat(false)" style="visibility: hidden" />
+		      </div>
+		  </form>		  
 		</div>
 		
 		<div>
