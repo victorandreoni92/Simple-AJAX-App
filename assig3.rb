@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do 
-  "Hello, worldaaz heroku"
+  erb :index
 end

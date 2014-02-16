@@ -1,0 +1,169 @@
+/* Victor Andreoni - CS 4241
+ * Stylesheet for CS4241 website
+ * This copy of the stylesheet is to be used with Heroku
+ */
+
+/* ------------------------------------------------------------------------ */
+/* CSS Reset - Reset some browser formatting to achieve desired format */
+
+
+
+body{
+	width: 960px;
+	margin: 0 auto;
+	padding: 0;
+	-webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 7px rgba(0,0,0,0.2);
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+	 
+}
+
+#page-title{
+	margin: 0px 0px 0px 5px;
+}
+
+/* ------------------------------------------------------------------------ */
+
+* {
+	font-family: "Trebuchet MS", Helvetica, sans-serif
+
+}
+
+footer {
+	width: 960px;
+	margin: 0 auto;
+	padding-bottom: 5px;
+	
+}
+
+p{
+	color: black;
+}
+
+h2{
+	color: red;
+}
+
+h3{
+	color: blue;
+}
+
+table{
+	border-collapse: collapse;
+} 
+
+th, td{
+	border: 3px dotted orange;
+}
+
+.input_holder{
+	text-align: center;
+}
+
+#content {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#topbar {
+	background-color: #58AFED;
+	height: 80px;
+	width: 100%;
+	margin: 0;
+}
+
+img.center {
+	display: block;
+ 	margin-left: auto;
+ 	margin-right: auto;
+}
+
+#navigation {
+	height: 35px;
+	background-color: #58AFED;
+	margin: 0;
+	padding: 0;
+	width: 100%;	
+	border-top: dotted;
+	border-top-width: medium;
+	border-color: white;
+}
+
+#page-title-holder{
+	line-height: 100px;
+}
+
+/***************************/
+/* Navigation bar styling  */
+
+nav {  
+    position: absolute;  
+    left: 0;  
+    width: 100%;
+    padding-top: 2px;
+    min-width: 960px;  
+}  
+
+nav ul {  
+    margin: 0 auto;  
+    list-style: none;
+    background: none;
+    width: 960px;
+    padding-left: 5px;
+}  
+
+nav ul li {  
+    float: left;
+    display:inline;
+    padding-right: 10px;  
+    padding-left: 0px;
+    background: none; 
+}  
+  
+/* Active navigation element */
+
+a.active, a:hover.active{
+	background: #d08626;
+	background: -webkit-linear-gradient(top, #d08626, #dda051, #d08626);
+	background: -moz-linear-gradient(top, #d08626, #dda051, #d08626);
+	background: -o-linear-gradient(top, #d08626, #dda051, #d08626);
+	background: -ms-linear-gradient(top, #d08626, #dda051, #d08626);
+	background: linear-gradient(#d08626, #d08626, #dda051, #d08626);
+	-pie-background: linear-gradient(#d08626, #dda051, #d08626);
+	text-shadow:none;
+	
+}  
+
+/* Regular elements */
+  
+nav ul li a {    
+	line-height: 30px;
+	display:inline;
+    text-decoration: none;  
+    color: #FFFFFF;  
+    padding:3px 6px;
+	background:#5891ED;
+	-webkit-border-radius:25px;
+	-moz-border-radius:25px;
+	border-radius:25px;
+	border-style: solid;
+	border-width: thin;
+	border-color: #586EED;
+}  
+  
+nav ul li a:hover {  
+    background: #d08626;
+	background: -webkit-linear-gradient(top, #d08626, #dda051, #d08626);
+	background: -moz-linear-gradient(top, #d08626, #dda051, #d08626);
+	background: -o-linear-gradient(top, #d08626, #dda051, #d08626);
+	background: -ms-linear-gradient(top, #d08626, #dda051, #d08626);
+	background: linear-gradient(#d08626, #d08626, #dda051, #d08626);
+	-pie-background: linear-gradient(#d08626, #dda051, #d08626);
+	text-shadow:none;
+}  
+  
+nav ul li.selected a {  
+    color: #fff;  
+}
+
