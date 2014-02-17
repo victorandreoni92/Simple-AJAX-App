@@ -18,6 +18,10 @@ function setup(){
 // Validate the secret_value given as input
 // Notifies user of validation result via DOM modification
 function validate_answer(){
+    // Input is parsed using JavaScript parseInt method. If the input contains non-numeric 
+    // characters, and error will be raised. If the input contains numeric characters
+    // followed by non-numeric characters, only the numeric characters at the beginning
+    // will be parsed, and the rest will be ignored.
     var input = parseInt(document.getElementById("secret_value").value);
     var upper_value = parseInt(document.getElementById("serverMax").value); // Max value in range
     var lower_value = parseInt(document.getElementById("serverMin").value); // Min value in range
@@ -26,7 +30,7 @@ function validate_answer(){
     document.getElementById("message").innerHTML = ""; // Reset message for each run
                 
     // If nothing was given as an input or a string was given, signal invalid input
-        if (input.length == 0 || isNaN(input)){
+        if (input.length == 0 || isNaN(input)){ // Check that there is input and is a number
             alert("Invalid input!");
             return;
         }
