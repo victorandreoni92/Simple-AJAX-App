@@ -80,22 +80,11 @@ function repeat(decision){
     }
 }
             
- // Handle user pressing enter while in the text box
- // Prevent form submission and call validate_answer() instead
-/*function processKeyDown(e){ 
-    if (!e) var e = window.event; // Get event
-                
-    var pressedKey = e.keyCode || e.which; // Get keycode from the event
-                
-    if (pressedKey == 13) { // If the pressed key was enter (code 13), then validate secret_value.
-        validate_answer();
-    }
-}*/
-            
 // Requests server for new target value by using AJAX
 function requestUpdatedTarget(){
     var upper_value = parseInt(document.getElementById("serverMax").value); // Max value in range
     var lower_value = parseInt(document.getElementById("serverMin").value); // Min value in range
+    var timestamp = new Date().getTime(); // Get stamp to append to url to prevent IE AJAX caching
     var request = getXHR();
     request.onreadystatechange =
         function() {
@@ -103,7 +92,7 @@ function requestUpdatedTarget(){
                 setUpdatedTarget(request.responseText);
             }
         };
-    request.open('GET', "/updateTarget?upper=" + upper_value + "&lower=" + lower_value + "", true);
+    request.open('GET', "/updateTarget?upper=" + upper_value + "&lower=" + lower_value + "&ts=" + timestamp + "", true);
     request.send();
             
 }
