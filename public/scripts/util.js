@@ -92,12 +92,15 @@ function requestUpdatedTarget(){
                 setUpdatedTarget(request.responseText);
             }
         };
+    // Add timestamp to URL to prevent Internet Explorer from caching AJAX request and giving same target
+    // value when user plays game more than twice
     request.open('GET', "/updateTarget?upper=" + upper_value + "&lower=" + lower_value + "&ts=" + timestamp + "", true);
     request.send();
             
 }
             
 // Modifies DOM to set new target received from server
+// @param newTarget The new target to update DOM to
 function setUpdatedTarget(newTarget){                
     document.getElementById("serverTarget").value = parseInt(newTarget);
 }

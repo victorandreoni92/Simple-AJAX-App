@@ -7,6 +7,8 @@
 # Target value will be between range established by
 # upper and lower
 
+#@param upper upper bound of guessing range
+#@param lower lower bound of guessing range
 def update_target_value(upper, lower)
   @lower = lower.to_i # Parse arguments to function
   @upper = upper.to_i
