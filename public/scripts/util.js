@@ -26,7 +26,7 @@ function validate_answer(){
     document.getElementById("message").innerHTML = ""; // Reset message for each run
                 
     // If nothing was given as an input or a string was given, signal invalid input
-        if (!input || input.length == 0 || isNaN(input)){
+        if (input.length == 0 || isNaN(input)){
             alert("Invalid input!");
             return;
         }

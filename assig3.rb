@@ -13,8 +13,8 @@ get '/' do
   
   @upper = 100 + Random.rand(21) #Generate upper between 100 and 120
   @lower = Random.rand(21) #Generate lower between 0 and 20
-  @target = @lower + Random.rand((@upper + 1) - @lower) # Generate target between lower and upper
-                                                        # Add 1 to upper to make range inclusive
+  @target = @lower + Random.rand(@upper - @lower) # Generate target between lower and upper
+                                                       
   erb :index
 end
 
